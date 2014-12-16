@@ -4,7 +4,7 @@
  * IF62C - Fundamentos de Programação 2
  * 
  * Segunda avaliação parcial 2014/2.
- * @author 
+ * @author Gabriel Rodrigues Garcia <b1zon@hotmail.com>
  */
 public class Avaliacao2 {
 

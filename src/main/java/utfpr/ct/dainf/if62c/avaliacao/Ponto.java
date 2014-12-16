@@ -11,7 +11,7 @@ package utfpr.ct.dainf.if62c.avaliacao;
 public class Ponto {
     private double x, y, z;
 
-    public Ponto (){
+    public Ponto(){
         x = 0;
         y = 0;
         z = 0;
@@ -69,11 +69,14 @@ public class Ponto {
         String s;
         return s = String.format("%s(%f,%f,%f)",p.getNome(),x,y,z);
     }
-    
-    public void equals() throws Exception{
-           if(x==y||x==z||y==z){
-               throw new RuntimeException("Pontos com mesma coordenada");
-           }
+    @Override
+    public boolean equals(Object o){
+           if(o == null)
+               return false;
+           Ponto p = new Ponto();
+           if(p.getX()==p.getY()||p.getX()==p.getZ()||p.getY()==p.getZ())
+               return false;
+           else return true;
     }
     
     public double dist(Ponto p){

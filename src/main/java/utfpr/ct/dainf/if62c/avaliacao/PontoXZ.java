@@ -8,7 +8,7 @@ package utfpr.ct.dainf.if62c.avaliacao;
 
 /**
  *
- * @author a1338773
+ * @author Gabriel Rodrigues Garcia <b1zon@hotmail.com>
  */
 public class PontoXZ extends Ponto2D{
        
