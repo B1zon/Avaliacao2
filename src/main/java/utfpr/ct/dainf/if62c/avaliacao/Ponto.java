@@ -6,11 +6,22 @@ package utfpr.ct.dainf.if62c.avaliacao;
  * IF62C - Fundamentos de Programação 2
  * 
  * Segunda avaliação parcial 2014/2.
- * @author 
+ * @author Gabriel Rodrigues Garcia <b1zon@hotmail.com>
  */
 public class Ponto {
     private double x, y, z;
 
+    public Ponto (){
+        x = 0;
+        y = 0;
+        z = 0;
+    }
+    public Ponto(double x, double y, double z){
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+            
     /**
      * Retorna no nome não-qualificado da classe.
      * @return O nome não qualificado da classe.
@@ -51,5 +62,25 @@ public class Ponto {
         hash = 79 * hash + (int) (Double.doubleToLongBits(this.z) ^ (Double.doubleToLongBits(this.z) >>> 32));
         return hash;
     }
-
+    
+    @Override
+    public String toString (){
+        Ponto p = new Ponto();
+        String s;
+        return s = String.format("%s(%f,%f,%f)",p.getNome(),x,y,z);
+    }
+    
+    public void equals() throws Exception{
+           if(x==y||x==z||y==z){
+               throw new RuntimeException("Pontos com mesma coordenada");
+           }
+    }
+    
+    public double dist(Ponto p){
+        double d;
+        d = Math.sqrt(Math.pow((p.getX()-x),2)+Math.pow((p.getY()-y),2)+
+                      Math.pow((p.getZ()-z),2));
+        return d;
+    }
+    
 }
